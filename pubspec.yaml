@@ -1,0 +1,33 @@
+name: synced_logs
+description: Sync logs with your cloud endpoints.
+version: 0.0.1
+homepage: https://www.codingshadows.com
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.3
+  path_provider: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.codingshadows.synced_logs
+        pluginClass: SyncedLogsPlugin
+      ios:
+        pluginClass: SyncedLogsPlugin
+      windows:
+        pluginClass: SyncedLogsPlugin
+      macos:
+        pluginClass: SyncedLogsWeb
+      linux:
+        pluginClass: SyncedLogsWeb

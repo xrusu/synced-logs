@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:synced_logs/controller/InitController.dart';
+import 'package:synced_logs/controller/init_controller.dart';
 
 class SyncedLogs {
   static const MethodChannel _channel = const MethodChannel('synced_logs');

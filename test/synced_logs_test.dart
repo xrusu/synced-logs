@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:synced_logs/controller/LocalLogsController.dart';
-import 'package:synced_logs/model/SyncedLog.dart';
+import 'package:synced_logs/controller/local_logs_controller.dart';
+import 'package:synced_logs/model/synced_log.dart';
 import 'package:synced_logs/synced_logs.dart';
 
 void main() {

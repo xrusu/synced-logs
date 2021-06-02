@@ -1,5 +1,5 @@
-import 'package:synced_logs/model/LogStatusCodes.dart';
-import 'package:synced_logs/model/SyncedLog.dart';
+import 'package:synced_logs/model/log_status_codes.dart';
+import 'package:synced_logs/model/synced_log.dart';
 
 class LogsController {
   static Future<int> saveLog(SyncedLog log) async {

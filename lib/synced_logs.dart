@@ -11,7 +11,7 @@ class SyncedLogs {
     return version;
   }
 
-  static Future<void> init({String? apiLogsServer, String? apiLogsEndpoint, String? apiBulkLogsEndpoint}) async {
+  static Future<bool> init({String? apiLogsServer, String? apiLogsEndpoint, String? apiBulkLogsEndpoint}) async {
     return InitController.init(apiLogsServer: apiLogsServer, apiLogsEndpoint: apiLogsEndpoint, apiBulkLogsEndpoint: apiBulkLogsEndpoint);
   }
 }

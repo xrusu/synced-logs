@@ -1,27 +1,27 @@
 class SyncedLog {
   String? tag;
-  String? occuredContext;
+  String? occurredContext;
   String? stackTrace;
-  String? occuredTimestamp;
+  String? occurredTimestamp;
   String? otherInfo;
 
-  SyncedLog({this.tag, this.occuredContext, this.stackTrace, this.occuredTimestamp, this.otherInfo});
+  SyncedLog({this.tag, this.occurredContext, this.stackTrace, this.occurredTimestamp, this.otherInfo});
 
   factory SyncedLog.fromJson(Map<String, dynamic> json) {
     return SyncedLog(
       tag: json['tag'],
-      occuredContext: json['occuredContext'],
+      occurredContext: json['occuredContext'],
       stackTrace: json['stackTrace'],
-      occuredTimestamp: json['occuredTimestamp'],
+      occurredTimestamp: json['occuredTimestamp'],
       otherInfo: json['otherInfo'],
     );
   }
 
   Map<String, dynamic> toJson() => {
         'tag': tag,
-        'occuredContext': occuredContext,
+        'occurredContext': occurredContext,
         'stackTrace': stackTrace,
-        'occuredTimestamp': occuredTimestamp.toString(),
+        'occurredTimestamp': occurredTimestamp.toString(),
         'otherInfo': otherInfo,
       };
 }

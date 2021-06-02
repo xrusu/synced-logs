@@ -1,7 +1,15 @@
 import 'package:synced_logs/data/RuntimeData.dart';
 
 class InitController {
-  static Future<void> init() async {
-    RuntimeData.initialized = true;
+  static Future<void> init({String? apiLogsServer, String? apiLogsEndpoint, String? apiBulkLogsEndpoint}) async {
+    if (apiLogsServer == null && apiLogsEndpoint == null && apiBulkLogsEndpoint == null) {
+      RuntimeData.initialized = false;
+      throw ("Api server endpoints not set!");
+    } else {
+      RuntimeData.apiLogsServer = apiLogsServer!;
+      RuntimeData.apiLogsEndpoint = apiLogsEndpoint!;
+      RuntimeData.apiBulkLogsEndpoint = apiBulkLogsEndpoint!;
+      RuntimeData.initialized = true;
+    }
   }
 }

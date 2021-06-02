@@ -24,6 +24,7 @@ void main() {
   });
 
   test('logLocalSaving', () async {
+    SyncedLogs.init(apiLogsServer: 'logsingest.codingshadows.com', apiLogsEndpoint: 'api/save/log', apiBulkLogsEndpoint: 'api/save/bulk/log');
     for (int i = 0; i < 50; i++) {
       await LocalLogsController.saveLogLocally(new SyncedLog(tag: "LOG_TAG", otherInfo: "OTHER_LOG_INFO " + i.toString()));
     }

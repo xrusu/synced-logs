@@ -1,4 +1,4 @@
-import 'package:synced_logs/data/RuntimeData.dart';
+import 'package:synced_logs/data/runtime_data.dart';
 
 class InitController {
   static Future<bool> init({String? apiLogsServer, String? apiLogsEndpoint, String? apiBulkLogsEndpoint}) async {

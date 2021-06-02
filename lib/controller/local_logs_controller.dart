@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:synced_logs/data/RuntimeData.dart';
+import 'package:synced_logs/data/runtime_data.dart';
 import 'package:synced_logs/model/log_status_codes.dart';
 import 'package:synced_logs/model/synced_log.dart';
 

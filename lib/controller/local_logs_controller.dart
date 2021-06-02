@@ -8,15 +8,16 @@ import 'package:synced_logs/model/log_status_codes.dart';
 import 'package:synced_logs/model/synced_log.dart';
 
 class LocalLogsController {
-  static List<SyncedLog> logsQueue = [];
+  static List<SyncedLog> localLogsQueue = [];
 
   static Future<void> saveLogLocally(SyncedLog log) async {
-    logsQueue.add(log);
+    localLogsQueue.add(log);
     await _saveLogsFromQueue();
   }
 
+  //TODO REFACTOR THIS, SAVE LOGS IN THE all_local_server_unsaved_logs.json FILE ONLY IF THE SERVER SAVE FAILS
   static Future<void> _saveLogsFromQueue() async {
-    List<SyncedLog> _currentLogsQueue = new List.from(logsQueue);
+    List<SyncedLog> _currentLogsQueue = new List.from(localLogsQueue);
     Directory appDocDir = await getApplicationDocumentsDirectory();
     String logsPath = appDocDir.path + RuntimeData.logsFolder;
     File allLocalLogsFile = new File(logsPath + "all_local_logs.json");
@@ -32,7 +33,7 @@ class LocalLogsController {
         await allLocalServerUnsavedLogsFile.writeAsString("," + json.encode(log), mode: FileMode.writeOnlyAppend);
       }
 
-      logsQueue.remove(log);
+      localLogsQueue.remove(log);
     }
   }
 
